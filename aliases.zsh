@@ -10,31 +10,6 @@ alias version="commit 'version'"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
-alias library="cd $HOME/Library"
-alias projects="cd $HOME/Code"
-alias sites="cd $HOME/Herd"
-
-# Laravel
-alias a="herd php artisan"
-alias fresh="herd php artisan migrate:fresh --seed"
-alias tinker="herd php artisan tinker"
-alias seed="herd php artisan db:seed"
-alias serve="herd php artisan serve"
-
-# PHP
-alias cfresh="rm -rf vendor/ composer.lock && composer i"
-alias composer="herd composer"
-alias php="herd php"
-
-# JS
-alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
-alias watch="npm run dev"
-
-# Docker
-alias docker-composer="docker-compose"
-
-# SQL Server
-alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:1433 mcr.microsoft.com/mssql/server:2017-latest"
 
 # Git
 alias gs="git status"
@@ -54,3 +29,21 @@ alias resolve="git add . && git commit --no-edit"
 alias stash="git stash -u"
 alias unstage="git restore --staged ."
 alias wip="commit wip"
+#
+# Custom
+alias dci='docker rmi $(docker images -f dangling=true -q)'
+alias dcc='docker rm $(docker ps -aq)'
+alias vi=vim
+alias tls='tmux ls'
+alias ta='tmux a'
+alias tn='tmux new-session -d'
+alias tss='tmux start-server'
+alias gch='git checkout'
+alias gre='git rebase'
+alias gst='git status'
+alias gbr='git branch'
+alias glg='git lg'
+alias gsw='git switch'
+alias k=kubectl
+alias kn=kubens
+alias kc=kubectx
