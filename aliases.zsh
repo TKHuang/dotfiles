@@ -11,27 +11,27 @@ alias c="clear"
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
-alias lara="sites && cd laravel/"
-alias docs="lara && cd docs/"
+# alias lara="sites && cd laravel/"
+# alias docs="lara && cd docs/"
 
 # Laravel
-alias a="php artisan"
-alias fresh="php artisan migrate:fresh --seed"
-alias seed="php artisan db:seed"
+# alias a="php artisan"
+# alias fresh="php artisan migrate:fresh --seed"
+# alias seed="php artisan db:seed"
 
 # PHP
-alias cfresh="rm -rf vendor/ composer.lock && composer i"
-alias composer="php -d memory_limit=-1 /usr/local/bin/composer"
+# alias cfresh="rm -rf vendor/ composer.lock && composer i"
+# alias composer="php -d memory_limit=-1 /usr/local/bin/composer"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
 alias watch="npm run watch"
 
 # Docker
-alias docker-composer="docker-compose"
+# alias docker-composer="docker-compose"
 
 # SQL Server
-alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:1433 mcr.microsoft.com/mssql/server:2017-latest"
+# alias mssql="docker run -e ACCEPT_EULA=Y -e SA_PASSWORD=LaravelWow1986! -p 1433:1433 mcr.microsoft.com/mssql/server:2017-latest"
 
 # Git
 alias gst="git status"
@@ -50,3 +50,21 @@ alias resolve="git add . && git commit --no-edit"
 alias stash="git stash -u"
 alias unstage="git restore --staged ."
 alias wip="commit wip"
+#
+# Custom
+alias dci='docker rmi $(docker images -f dangling=true -q)'
+alias dcc='docker rm $(docker ps -aq)'
+alias vi=vim
+alias tls='tmux ls'
+alias ta='tmux a'
+alias tn='tmux new-session -d'
+alias tss='tmux start-server'
+alias gch='git checkout'
+alias gre='git rebase'
+alias gst='git status'
+alias gbr='git branch'
+alias glg='git lg'
+alias gsw='git switch'
+alias k=kubectl
+alias kn=kubens
+alias kc=kubectx
