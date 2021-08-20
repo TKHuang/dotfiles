@@ -148,7 +148,7 @@ complete -F __start_kubectl k
 
 [[ -s /Users/tk/.autojump/etc/profile.d/autojump.sh ]] && source /Users/tk/.autojump/etc/profile.d/autojump.sh
 
-. /opt/homebrew/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/asdf.sh
 
 # pipx completion
 eval "$(register-python-argcomplete pipx)"
