@@ -47,3 +47,4 @@ alias gsw='git switch'
 alias k=kubectl
 alias kn=kubens
 alias kc=kubectx
+alias sshi='ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'

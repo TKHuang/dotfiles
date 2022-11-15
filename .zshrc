@@ -144,7 +144,7 @@ complete -F __start_kubectl k
 ###
 
 
-. /opt/homebrew/opt/asdf/asdf.sh
+# . /opt/homebrew/opt/asdf/asdf.sh
 
 # pipx completion
 eval "$(register-python-argcomplete pipx)"
