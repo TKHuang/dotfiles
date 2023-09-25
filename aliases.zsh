@@ -16,6 +16,7 @@ alias gs="git status"
 alias gb="git branch"
 alias gc="git checkout"
 alias gl="git log --oneline --decorate --color"
+alias gprune="git fetch --prune && git branch -r | awk '{print $1}' | egrep -v -f /dev/stdin <(git branch -vv) | awk '{print $1}' | xargs -r git branch -d"
 alias amend="git add . && git commit --amend --no-edit"
 alias commit="git add . && git commit -m"
 alias diff="git diff"
@@ -34,6 +35,7 @@ alias wip="commit wip"
 alias dci='docker rmi $(docker images -f dangling=true -q)'
 alias dcc='docker rm $(docker ps -aq)'
 alias vi=vim
+alias mvim=vim
 alias tls='tmux ls'
 alias ta='tmux a'
 alias tn='tmux new-session -d'
@@ -48,3 +50,4 @@ alias k=kubectl
 alias kn=kubens
 alias kc=kubectx
 alias sshi='ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
+alias sshc='vim ~/.ssh/config'
