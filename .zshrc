@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -13,6 +14,14 @@ export DOTFILES=$HOME/.dotfiles
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+
+# antigen bundle
+source $HOME/antigen/antigen.zsh
+antigen init ~/.antigenrc
+
+# Enable completions
+autoload -Uz compinit && compinit
 
 # Minimal - Theme Settings
 export MNML_INSERT_CHAR="$"
@@ -117,21 +126,25 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #############
-source /Users/tk/antigen.zsh
-antigen init ~/.antigenrc
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# iterm2 integration
+if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
+##### WHAT YOU WANT TO DISABLE FOR WARP - BELOW
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+##### WHAT YOU WANT TO DISABLE FOR WARP - ABOVE
+fi
 
 ## fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Use fd instead of find.
 # export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .gi'
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
 # kubernetes
 export PATH="${PATH}:${HOME}/.krew/bin"
@@ -143,8 +156,23 @@ complete -F __start_kubectl k
 # function kubectl() { echo "+ kubectl $@">&2; command kubectl $@; }
 ###
 
+export GOPATH=${HOME}/go
+export PATH="${GOPATH}/bin:${PATH}"
 
-# . /opt/homebrew/opt/asdf/asdf.sh
+# ssh() {
+    # if [ "$(ps -p $(ps -p $$ -o ppid=) -o comm=)" = "tmux" ]; then
+        # tmux rename-window "$(echo $* | rev | cut -d @ -f1 | rev)"
+        # command ssh "$@"
+        # tmux set-window-option automatic-rename "on" 1>/dev/null
+    # else
+        # command ssh "$@"
+    # fi
+# }
 
-# pipx completion
-eval "$(register-python-argcomplete pipx)"
+# fix tar include ._* hidden file
+# https://superuser.com/questions/259703/get-mac-tar-to-stop-putting-filenames-in-tar-archives
+export COPYFILE_DISABLE=1
+
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+source <(orbctl completion zsh)
+eval "$(zoxide init --cmd j zsh)"

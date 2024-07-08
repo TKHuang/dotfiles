@@ -3,10 +3,6 @@ alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias reloadshell="omz reload"
 alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="/opt/homebrew/opt/coreutils/libexec/gnubin/ls -AhlFo --color --group-directories-first"
-alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
-alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-alias compile="commit 'compile'"
-alias version="commit 'version'"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
@@ -50,4 +46,9 @@ alias k=kubectl
 alias kn=kubens
 alias kc=kubectx
 alias sshi='ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
-alias sshc='vim ~/.ssh/config'
+alias sshe='vim ~/.ssh/config'
+alias sshc='ssh-copy-id -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
+alias sshr='ssh-keygen -R'
+alias tari='tar --exclude-from=$HOME/.tarignore'
+## trick watch to expand alias
+alias watch='watch '
