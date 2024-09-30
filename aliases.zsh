@@ -48,7 +48,9 @@ alias kc=kubectx
 alias sshi='ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
 alias sshe='vim ~/.ssh/config'
 alias sshc='ssh-copy-id -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
-alias sshr='ssh-keygen -R'
+sshr() {
+    ssh-keygen -R "${1#*@}"
+}
 alias tari='tar --exclude-from=$HOME/.tarignore'
 ## trick watch to expand alias
 alias watch='watch '
