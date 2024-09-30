@@ -40,8 +40,11 @@ cask 'warp'
 
 # Quicklook
 cask 'qlmarkdown'
-cask 'quicklook-json'
-case 'syntax-highlight'
+# cask 'quicklook-json'
+cask 'syntax-highlight'
+cask 'qlvideo'
+cask 'qlimagesize'
+cask 'mdimagesizemdimporter'
 
 # Fonts
 cask 'font-lato'
