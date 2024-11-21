@@ -52,6 +52,6 @@ sshr() {
     ssh-keygen -R "${1#*@}"
 }
 # alias sshr='ssh-keygen -R'
-alias tari='tar --exclude-from=$HOME/.tarignore'
+alias tari='tar --no-xattrs --exclude-from=$HOME/.tarignore'
 ## trick watch to expand alias
 alias watch='watch '

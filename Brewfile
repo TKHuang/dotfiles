@@ -53,6 +53,7 @@ cask 'font-roboto'
 cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
+cask 'font-hack-nerd-font'
 
 # Mac App Store
 mas 'Keynote', id: 409183694
